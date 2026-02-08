@@ -1,0 +1,107 @@
+Introduction to CSS
+Types of CSS
+CSS Selectors:
+              Universal Selector
+              ID selector
+              Tag Selector
+              Class Selector
+              Sub Selector
+              Attribute Selector
+              Group Selector
+CSS Properties:
+              Background properties
+              Block Properties
+              Box properties
+              List properties
+              Link properties
+              Border Properties
+              Positioning Properties
+CSS Lists
+CSS Tables
+CSS Menu Design
+CSS Image Gallery
+CSS Layout Design
+CSS Animations
+CSS Transitions
+CSS Transforms
+CSS Media Queries
+CSS Flexbox
+CSS Grid
+CSS Variables
+CSS Custom Properties
+CSS Frameworks
+
+
+4. Introduction to CSS
+   CSS Cascading style Sheets 
+   CSS Webpage Design, Layout
+   External style sheets CSS files .css extension save
+   Syntax:-
+   selector { property : value }
+   A CSS rule consists of a selector and a declaration block.
+   Selector          Declaration           Declaration
+
+    (The Target)      (The Style)           (The Setting)
+       h1        {      color        :       blue;      }
+
+    Think of HTML as the "skeleton" of a website and CSS as the "outfit." 
+    CSS (Cascading Style Sheets) is what makes a page look cool by adding colors, fonts, and layouts.
+
+    The "Magic Formula":
+    Selector { Property : Value; }
+
+    In plain English:
+    Who? { What feature? : How should it look?; }   
+
+    Example:
+    p { color : red; }
+    "Hey Paragraphs, make your text color red!"
+
+    - Selector: The part of the page you’re picking on (The "Who").
+    - Property: The specific thing you want to change, like color or size (The "What").
+    - Value: The choice you’ve made, like 'blue' or '20px' (The "How").
+
+Benefits of using CSS
+1. Save time
+2. Lightweight code
+3. Page loading fast
+4. Easy to maintain
+5. Lightweight code
+6. More formatting option
+
+
+
+
+5. CSS Selectors (The "Who" You Are Styling)
+
+   1. Universal Selector (*)
+      - The "Everybody" Selector: Targets every single element on the page. 
+      - Usage: * { margin: 0; } (Sets a rule for everything at once).
+
+   2. ID Selector (#id)
+      - The "Specific Person" Selector: Targets one unique element with a specific ID name. It's like a person's Social Security number—only one element should have it.
+      - Usage: #main-title { color: gold; }
+
+   3. Tag Selector (h1, p, div)
+      - The "Category" Selector: Targets all elements of a certain HTML type.
+      - Usage: p { font-size: 16px; } (Makes every single paragraph look the same).
+
+   4. Class Selector (.class)
+      - The "Group" Selector: Targets any elements that you've put into a specific group. Many different elements can share the same class.
+      - Usage: .highlight { background: yellow; }
+
+   5. Sub Selector (Descendant) (div p)
+      - The "Location" Selector: Targets an element only if it is sitting inside another specific element.
+      - Usage: nav a { color: white; } (Only styles links that are inside the navigation bar).
+
+   6. Attribute Selector ([type="text"])
+      - The "Feature" Selector: Targets elements based on their specific HTML traits or "extras."
+      - Usage: input[type="checkbox"] { margin: 10px; }
+
+   7. Group Selector (h1, h2, p)
+      - The "Team" Selector: Used when you want multiple different things to share the exact same style without writing the code over and over.
+      - Usage: h1, h2, .main-text { text-align: center; }
+
+
+
+

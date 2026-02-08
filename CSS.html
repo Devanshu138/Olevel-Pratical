@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>CSS</title>
+    <!--This is how use the external CSS-->
+    <link rel="stylesheet" href="style.css">
+    <!--This is how use the internal CSS-->
+    <style type="text/css">
+        p {
+            font-size: 35px;
+            text-align: center;
+            color: white;
+            font-variant: small-caps;
+
+        }
+
+        /*You can also use this  in a single line like border: 10px solid red*/
+        h3 {
+            border-width: 2px;
+            border-color: red;
+            border-style: solid;
+            /*You can also set different border for different sides like border-top, border-bottom, border-left, border-right*/
+        }
+
+        body {
+            background-color: orange;
+            /*This is how you can use the background image*/
+            background-image: url("ironman.jpg");
+            background-image: linear-gradient(to left, green, white, orange);
+            background-image: radial-gradient(circle, green, blue 10%, white 10%);
+            background-repeat: no-repeat;
+            background-position: 40px 40px;
+            background-size: cover;
+            background-attachment: fixed;
+        }
+
+        /*This is how you can use the universal selector*/
+        * {
+            margin: 5px;
+            padding: 5px;
+        }
+
+        /*This is how you can use the class selector*/
+        .x {
+            color: pink;
+            font-family: Arial;
+        }
+
+        /*This is how you can use the id selector*/
+        #id1 {
+            color: green;
+            font-family: Arial;
+        }
+
+        /* Grouping selectors: Use a comma to apply the same styles to multiple elements simultaneously */
+        p,
+        h1 {
+            font-family: cursive;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        /*This is how you can use the attribute selector*/
+        img[alt="img1"] {
+            border: 5px solid blue;
+        }
+
+        img[alt="img2"] {
+            border: 5px solid red;
+        }
+
+        /*This  is how you can use the attribute selector up arrow*/
+        img[alt^="test"] {
+            border: 5px solid pink
+        }
+
+        /*This is how you can use the attribute selector asterisk this selector search and find the similar words from anywhere in the tag*/
+        img[alt*="dev"] {
+            border: 5px solid green;
+        }
+
+        /*This dollar sign is used to check the last value of the tag*/
+        a[target$="Gautam"] {
+            background-color: yellow;
+        }
+
+        /*This is used for the tilde attribute selector*/
+        a[target~="if"] {
+            background-color: green;
+        }
+
+        /*This is used for the hyphen attribute selector*/
+        a[target|="h-1"] {
+            background-color: orange;
+        }
+
+        /*This is used for Decedent selector*/
+        ol li {
+            background-color: aquamarine;
+        }
+
+        /*This is used for chilld selector it only work for the direct child*/
+        ol>li {
+            background-color: indigo;
+        }
+
+        /*Adjacent sibling selector*/
+        p+h3 {
+            background-color: brown;
+        }
+
+        /*General sibling selector*/
+        p~h4 {
+            background-color: red;
+        }
+
+        /*This is how can make changes to table*/
+        table,
+        th,
+        td,
+        caption {
+            border: 1px solid black;
+            border-spacing: 12px 15px;
+            border-collapse: collapse;
+        }
+
+        /*This is used for the nth-child selector*/
+        tr:nth-child(even) {
+            background-color: green;
+        }
+
+        tr:nth-child(odd) {
+            background-color: yellow;
+        }
+
+        /*This is used for the caption selector*/
+        caption {
+            caption-side: top;
+            background-color: blue;
+            color: white;
+        }
+    </style>
+</head>
+
+
+
+<body>
+    <!-- This is how you can use inline CSS-->
+    <h1 style="color:orange;font-size:25px;">Devanshu Gautam</h1>
+    <p>This is a paragraph</p>
+    <!--You just have to add a class name to the tag and use it as a selector in the css file or internal css to make the changes using that class selector-->
+    <p class="x">This is used for id selector</p>
+    <!--You just have to add a id to use this selector like id="id1"-->
+    <h2 id="id1">This tag is use to see the changes from the css file</h2>
+    <img src="ironman.jpg" width="400" alt="img1">
+    <img src="Study.jpg" height="200" alt="img2">
+    <img src="Motivational.jpg" alt="test1" height="150">
+    <!--The up arrow attribute not made any changes to the beelow code line because the up arrow only work to check the first value from start like test1 & 2test both have test,
+    but second one not starts with test it starts with 2 that why its not worked for this -->
+    <img src="Finished.jpg" alt="2test" width="400">
+    <!--This code line are used by display the working of the asterisk attribute selector-->
+    <img src="bye.png" alt="dev" height="200" width="400">
+    <img src="theunsuccessfulcoder.png" alt="devanshu" height="200" width="400"><br>
+    <!--This code line is used for display the working of the dollar sign attribute selector-->
+    <a href="https://www.google.com" target="Gautam">Google</a>
+    <a href="https://www.instagram.com" target="Devanshu Gautam">Instagram</a>
+    <!--This is used for the tilde attribute selector one thing you have to remember is that this selector only work when the value is separated by the space-->
+    <a href="https://www.facebook.com" target="asif">Facebook</a>
+    <a href="https://www.twitter.com" target="as if">Twitter</a>
+    <!--This is used for the hyphen attribute selector one thing you have to remember is that this selector only work when the value is separated by the hyphen-->
+    <a href="https://www.youtube.com" target="h-1">Youtube</a>
+    <a href="https://www.whatsapp.com" target="h2">Whatsapp</a><br>
+    <!--This is explain of Decedent selector put the css formatting to all the list items-->
+    <ol>
+        <li>item 1</li>
+        <li>item 2</li>
+        <ul>
+            <li>sub item 1</li>
+            <li>sub item 2</li>
+        </ul>
+        <li>item 3</li>
+    </ol>
+    <!--Adjacent sibling selector-->
+    <p>This paragraph is styled because it is the immediate sibling of the h3.</p>
+    <h3>This is h3</h3>
+    <p>This paragraph is not styled.</p>
+
+    <!--General sibling selector-->
+    <p>This paragraph is styled because it is the sibling of the h3.</p>
+    <h4>This is h4</h4>
+    <h4>This is also gets formatted because it format all the h4 tags after the p tag.</h4><br>
+
+    <table>
+        <caption>Information</caption>
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Sex</th>
+        </tr>
+        <tr>
+            <td>Devanshu</td>
+            <td>23</td>
+            <td>Male</td>
+        </tr>
+        <tr>
+            <td>Asif</td>
+            <td>22</td>
+            <td>Male</td>
+        </tr>
+        <tr>
+            <td>Gautam</td>
+            <td>22</td>
+            <td>Male</td>
+        </tr>
+    </table>
+</body>
+
+</html>
