@@ -1,107 +1,519 @@
-Introduction to CSS
-Types of CSS
-CSS Selectors:
-              Universal Selector
-              ID selector
-              Tag Selector
-              Class Selector
-              Sub Selector
-              Attribute Selector
-              Group Selector
-CSS Properties:
-              Background properties
-              Block Properties
-              Box properties
-              List properties
-              Link properties
-              Border Properties
-              Positioning Properties
-CSS Lists
-CSS Tables
-CSS Menu Design
-CSS Image Gallery
-CSS Layout Design
-CSS Animations
-CSS Transitions
-CSS Transforms
-CSS Media Queries
-CSS Flexbox
-CSS Grid
-CSS Variables
-CSS Custom Properties
-CSS Frameworks
+CSS Notes - One Shot Revision
+by Devanshu Gautam
+========================================
 
 
-4. Introduction to CSS
-   CSS Cascading style Sheets 
-   CSS Webpage Design, Layout
-   External style sheets CSS files .css extension save
-   Syntax:-
-   selector { property : value }
-   A CSS rule consists of a selector and a declaration block.
-   Selector          Declaration           Declaration
+So basically what is CSS?
+-------------------------
 
-    (The Target)      (The Style)           (The Setting)
-       h1        {      color        :       blue;      }
+Okay so you know how HTML is like the skeleton of a webpage right?
+Like it puts things on the page - headings, paragraphs, images, all that stuff.
 
-    Think of HTML as the "skeleton" of a website and CSS as the "outfit." 
-    CSS (Cascading Style Sheets) is what makes a page look cool by adding colors, fonts, and layouts.
+But the problem is... it looks boring. Like really plain. No colors, no cool fonts, nothing fancy.
 
-    The "Magic Formula":
-    Selector { Property : Value; }
+Thats where CSS comes in.
 
-    In plain English:
-    Who? { What feature? : How should it look?; }   
+CSS stands for "Cascading Style Sheets" and its basically the thing that makes
+your webpage look pretty. Think of it like this:
 
-    Example:
-    p { color : red; }
-    "Hey Paragraphs, make your text color red!"
+    HTML  = the body of a person (bones, muscles, structure)
+    CSS   = the clothes, hairstyle, shoes, accessories
 
-    - Selector: The part of the page you’re picking on (The "Who").
-    - Property: The specific thing you want to change, like color or size (The "What").
-    - Value: The choice you’ve made, like 'blue' or '20px' (The "How").
-
-Benefits of using CSS
-1. Save time
-2. Lightweight code
-3. Page loading fast
-4. Easy to maintain
-5. Lightweight code
-6. More formatting option
+Without CSS your website looks like a plain white paper with black text.
+With CSS you can add colors, change fonts, add backgrounds, make things move
+and basically make it look however you want.
 
 
+How to write CSS - The basic formula
+-------------------------------------
+
+Its actually really simple. There are only 3 things you need to remember:
+
+    selector { property: value; }
+
+Lets break that down with a real example:
+
+    p { color: red; }
+
+What this says is:
+    - "Hey browser, find all the <p> tags on the page"      (thats the selector)
+    - "Change their text color"                               (thats the property)
+    - "Make it red"                                           (thats the value)
+
+Thats literally it. You pick WHAT you want to style, WHAT you want to change about it,
+and HOW you want it to look. Simple.
+
+Another example:
+
+    h1 { font-size: 50px; }
+
+This just says "make all h1 headings 50 pixels big". 
+See? nothing complicated.
+
+You can also change multiple things at once:
+
+    h1 {
+        color: blue;
+        font-size: 50px;
+        text-align: center;
+    }
+
+Just put each thing on a new line and dont forget the semicolon (;) at the end of each line.
+The semicolon is like a full stop in English - it tells the browser "okay this one is done, 
+read the next one now".
 
 
-5. CSS Selectors (The "Who" You Are Styling)
+The 3 ways to use CSS
+-----------------------
 
-   1. Universal Selector (*)
-      - The "Everybody" Selector: Targets every single element on the page. 
-      - Usage: * { margin: 0; } (Sets a rule for everything at once).
+There are 3 places where you can write your CSS. Each one works fine but some are
+better than others depending on the situation.
 
-   2. ID Selector (#id)
-      - The "Specific Person" Selector: Targets one unique element with a specific ID name. It's like a person's Social Security number—only one element should have it.
-      - Usage: #main-title { color: gold; }
+1) INLINE CSS
+   You write the CSS directly inside the HTML tag using the style attribute.
+   Like this:
 
-   3. Tag Selector (h1, p, div)
-      - The "Category" Selector: Targets all elements of a certain HTML type.
-      - Usage: p { font-size: 16px; } (Makes every single paragraph look the same).
+      <h1 style="color:red; font-size:30px;">Hello</h1>
 
-   4. Class Selector (.class)
-      - The "Group" Selector: Targets any elements that you've put into a specific group. Many different elements can share the same class.
-      - Usage: .highlight { background: yellow; }
+   This is quick and easy but its messy if you have a lot of styling to do.
+   Imagine writing style="..." on every single tag. Thatd be a nightmare.
+   So we usually avoid this unless its just one or two small changes.
 
-   5. Sub Selector (Descendant) (div p)
-      - The "Location" Selector: Targets an element only if it is sitting inside another specific element.
-      - Usage: nav a { color: white; } (Only styles links that are inside the navigation bar).
+2) INTERNAL CSS
+   You write all your CSS inside a <style> tag in the <head> section of your HTML page.
+   Like this:
 
-   6. Attribute Selector ([type="text"])
-      - The "Feature" Selector: Targets elements based on their specific HTML traits or "extras."
-      - Usage: input[type="checkbox"] { margin: 10px; }
+      <head>
+          <style>
+              h1 { color: red; }
+              p  { font-size: 20px; }
+          </style>
+      </head>
 
-   7. Group Selector (h1, h2, p)
-      - The "Team" Selector: Used when you want multiple different things to share the exact same style without writing the code over and over.
-      - Usage: h1, h2, .main-text { text-align: center; }
+   This is way better than inline because all your styles are in one place.
+   But the thing is, this only works for that one page. If you have 10 pages 
+   youd have to copy paste the same CSS in all 10. Not ideal.
+
+3) EXTERNAL CSS
+   You make a completely separate file (like style.css) and write all your CSS in there.
+   Then you connect it to your HTML page using a <link> tag:
+
+      <head>
+          <link rel="stylesheet" href="style.css">
+      </head>
+
+   This is the BEST way to do it. Why? Because you write CSS once and all your
+   pages can use the same file. Change something in one place and it updates everywhere.
+   Professional websites always use this method.
 
 
+Why even use CSS? (Benefits)
+-----------------------------
+
+- Saves time - write once use everywhere
+- Pages load faster because the code is clean and light
+- Easier to fix and update - change one thing and it affects the whole site
+- Way more design options than plain HTML
+- Keeps your HTML clean and readable
 
 
+========================================
+CSS SELECTORS
+========================================
+
+Selectors are how you TELL the browser what thing you want to style.
+Think of them like pointing your finger at something and saying "you, change your look."
+
+There are different types of selectors depending on what exactly you want to pick.
+
+
+1) Universal Selector  (*)
+   -------------------------
+   This one is simple - it selects EVERYTHING on the page. Every tag, every element,
+   every single thing.
+
+      * { margin: 0; padding: 0; }
+
+   This says "remove all the extra space from everything on the page".
+   People often use this at the start to reset the default styles that the browser adds.
+
+   Think of it like a teacher saying "EVERYONE stand up!" - nobody is left out.
+
+
+2) Tag Selector  (h1, p, div, etc.)
+   -----------------------------------
+   This selects ALL elements of a certain type.
+
+      p { color: blue; }
+
+   This makes EVERY paragraph on the page blue. Not just one - all of them.
+
+   Its like saying "all the boys wear blue shirts" - every boy has to follow the rule.
+
+
+3) Class Selector  (.classname)
+   ------------------------------
+   Sometimes you dont want ALL paragraphs to be blue. Maybe just a few special ones.
+   Thats when you use a class.
+
+   In HTML you add a class name:
+      <p class="special">This is special</p>
+      <p>This is normal</p>
+
+   In CSS you target it with a dot (.):
+      .special { color: red; }
+
+   Now only the paragraph with class="special" turns red. The other one stays normal.
+
+   Think of it like school sections - you can say "Section A come here" and only
+   those students will come, not the whole school.
+
+   One cool thing - you can give the same class to as many elements as you want.
+   A heading, a paragraph, a div - they can all share the same class.
+
+
+4) ID Selector  (#idname)
+   -------------------------
+   This is like the class selector but more specific. An ID should only be used ONCE
+   on the whole page. Its like a roll number - only one student has it.
+
+   In HTML:
+      <h1 id="main-title">Welcome</h1>
+
+   In CSS you target it with a hash (#):
+      #main-title { color: gold; font-size: 40px; }
+
+   Use ID when you want to style one unique thing.
+   Use Class when you want to style a group of things.
+
+   Easy rule to remember:
+      ID = One person
+      Class = A group of people
+
+
+5) Group Selector  (h1, p, h3)
+   ------------------------------
+   What if you want headings AND paragraphs AND divs to all have the same font?
+   You could write:
+
+      h1 { font-family: Arial; }
+      p  { font-family: Arial; }
+      h3 { font-family: Arial; }
+
+   But thats repeating yourself. Instead just group them with commas:
+
+      h1, p, h3 { font-family: Arial; }
+
+   Same result, less typing.
+
+
+6) Descendant Selector  (ol li)
+   -------------------------------
+   This targets an element that is INSIDE another element.
+
+      ol li { background-color: yellow; }
+
+   This says "only color the li items that are inside an ol (ordered list)".
+   If theres an li inside a ul (unordered list), it wont be affected.
+
+   Its like saying "students sitting in Room A raise your hand" - only students
+   in that specific room will respond.
+
+
+7) Child Selector  (ol > li)
+   ----------------------------
+   This is similar to descendant but stricter. It only targets the DIRECT children,
+   not grandchildren or deeper.
+
+      ol > li { color: blue; }
+
+   If you have a nested list like:
+      <ol>
+          <li>Item 1</li>        <-- this gets styled
+          <ul>
+              <li>Sub item</li>  <-- this does NOT (its a grandchild not a direct child)
+          </ul>
+      </ol>
+
+   The > sign means "only the ones directly inside, not the ones inside something
+   else thats inside".
+
+
+8) Attribute Selector  ([attribute])
+   ------------------------------------
+   This targets elements based on some attribute they have.
+
+   The basic one:
+      img[alt="myimage"] { border: 5px solid red; }
+   
+   This only adds a border to images that have alt="myimage".
+
+   But there are some cool variations:
+
+   a) Starts with (^=)
+      img[alt^="test"] { border: 3px solid pink; }
+      This matches images where alt STARTS with "test"
+      so alt="test1" matches but alt="2test" does NOT
+
+   b) Contains (*=)
+      img[alt*="dev"] { border: 3px solid green; }
+      This matches images where alt CONTAINS "dev" anywhere
+      so alt="dev" and alt="devanshu" both match
+
+   c) Ends with ($=)
+      a[target$="Gautam"] { background: yellow; }
+      This matches links where target ENDS with "Gautam"
+
+   d) Word match (~=)
+      a[target~="if"] { background: green; }
+      This matches if the value contains the word "if" as a separate word
+      (separated by spaces)
+
+   e) Hyphen match (|=)
+      a[target|="h-1"] { background: orange; }
+      Matches if value is exactly "h-1" or starts with "h-1-"
+
+
+9) Adjacent Sibling Selector  (p + h3)
+   ----------------------------------------
+   This selects an element that comes IMMEDIATELY after another element.
+   They must be on the same level (siblings, not parent-child).
+
+      p + h3 { background-color: brown; }
+
+   This only styles the h3 that comes right after a p tag. If theres 
+   something else between them it wont work.
+
+   Its like saying "the person sitting right next to Rahul gets a prize" - 
+   only that one person, nobody else.
+
+
+10) General Sibling Selector  (p ~ h4)
+    ----------------------------------------
+    This is like the adjacent sibling but less strict. It selects ALL matching
+    siblings that come after the first element, not just the immediate next one.
+
+       p ~ h4 { background-color: red; }
+
+    This styles ALL h4 tags that come after a p tag (as long as theyre siblings).
+
+
+========================================
+CSS PROPERTIES - THE FUN STUFF
+========================================
+
+Okay so now you know how to pick what you want to style (selectors).
+Now lets talk about what you can actually DO to those elements.
+
+
+BACKGROUND STUFF
+-----------------
+
+You can change the background of any element. Here are the main ones:
+
+    body {
+        background-color: orange;
+        background-image: url("myimage.jpg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        background-attachment: fixed;
+    }
+
+Lets go through each:
+    - background-color: sets a solid color behind everything
+    - background-image: puts a picture as the background
+    - background-repeat: by default images repeat/tile to fill the space. 
+      "no-repeat" stops that.
+    - background-position: where the image sits (center, top, left, etc.)
+    - background-size: "cover" makes it fill the whole area, "contain" keeps full image visible
+    - background-attachment: "fixed" means the background stays in place when you scroll
+
+Cool thing - you can also use gradients instead of images:
+    background-image: linear-gradient(to right, red, blue);
+    This makes a smooth color change from red to blue going left to right.
+
+    background-image: radial-gradient(circle, green, white);
+    This makes a circular gradient that goes from green in the center to white on the edges.
+
+
+BORDER STUFF
+-------------
+
+Borders go around an element. You can set them like this:
+
+    h3 {
+        border: 2px solid red;
+    }
+
+That one line sets the width (2px), style (solid), and color (red) all at once.
+
+You can also set each side separately:
+    border-top: 3px dashed blue;
+    border-bottom: 1px dotted green;
+    border-left: 2px solid black;
+    border-right: 2px solid black;
+
+Border styles you can use:
+    solid, dashed, dotted, double, groove, ridge, inset, outset, none
+
+
+TEXT STUFF
+-----------
+
+There are so many ways to change how text looks:
+
+    div {
+        color: red;                          -- changes text color
+        font-size: 20px;                     -- changes text size
+        font-family: Arial;                  -- changes the font
+        text-align: center;                  -- puts text in the center (or left, right)
+        text-decoration: underline;          -- adds underline (or overline, line-through)
+        text-transform: uppercase;           -- makes all text UPPERCASE (or lowercase, capitalize)
+        text-shadow: 2px 2px 2px gray;       -- adds a shadow behind the text
+        text-indent: 20px;                   -- adds space before the first line
+        word-spacing: 5px;                   -- space between words
+        letter-spacing: 3px;                 -- space between each letter
+        white-space: nowrap;                 -- stops text from wrapping to next line
+        font-variant: small-caps;            -- makes lowercase letters look like small capitals
+        vertical-align: super;               -- moves text up (like superscript)
+    }
+
+You dont need to use all of these at once obviously. Just pick what you need.
+
+
+THE BOX MODEL (Margin and Padding)
+------------------------------------
+
+This is one of the most important things in CSS. Every element on the page is
+basically a box. And every box has 4 layers:
+
+    +----------------------------------+
+    |            MARGIN                |   <-- space OUTSIDE the border (between this box and others)
+    |  +----------------------------+  |
+    |  |         BORDER             |  |   <-- the border line itself
+    |  |  +----------------------+  |  |
+    |  |  |       PADDING        |  |  |   <-- space INSIDE the border (between border and content)
+    |  |  |  +----------------+  |  |  |
+    |  |  |  |    CONTENT     |  |  |  |   <-- your actual text, image, etc.
+    |  |  |  +----------------+  |  |  |
+    |  |  +----------------------+  |  |
+    |  +----------------------------+  |
+    +----------------------------------+
+
+    margin: 10px;     -- adds 10px space around the outside
+    padding: 10px;    -- adds 10px space on the inside
+    border: 2px solid black;  -- adds a 2px border
+
+You can also set each side individually:
+    margin-top: 5px;
+    margin-bottom: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+
+Or use shorthand (goes clockwise: top, right, bottom, left):
+    margin: 10px 20px 10px 20px;
+
+
+POSITION
+---------
+
+By default everything on a webpage just stacks one after another from top to bottom.
+But sometimes you want to move things around. Thats what position does.
+
+    #mybox {
+        position: relative;
+        top: 20px;
+        left: 50px;
+    }
+
+    - position: relative  --  moves the element FROM where it normally would be
+    - top: 20px           --  pushes it 20px down from the top
+    - left: 50px          --  pushes it 50px from the left
+
+There are other position values too:
+    - static:   the default, normal flow (you rarely need to write this)
+    - relative: moves it relative to where it normally sits
+    - absolute: positions it relative to its nearest positioned parent
+    - fixed:    stays in one spot even when you scroll the page
+    - sticky:   acts like relative until you scroll past it, then it sticks
+
+
+LIST STYLING
+--------------
+
+You can change how bullets and numbers look in lists:
+
+    ul {
+        list-style-type: circle;        -- options: disc, circle, square, none
+        list-style-position: inside;    -- puts bullets inside the text area
+    }
+
+    ol {
+        list-style-type: upper-roman;   -- I, II, III instead of 1, 2, 3
+    }
+
+
+TABLE STYLING
+--------------
+
+Tables can be styled a lot with CSS:
+
+    table, th, td {
+        border: 2px solid black;
+        border-collapse: collapse;      -- removes the double border between cells
+    }
+
+    table {
+        width: 100%;
+        border-spacing: 10px;           -- space between cells (only works without collapse)
+    }
+
+    caption {
+        caption-side: top;              -- puts the table title on top (or bottom)
+        background-color: blue;
+        color: white;
+    }
+
+Cool tricks with tables:
+    tr:nth-child(even) { background: lightgray; }   -- colors every other row
+    tr:hover { background: yellow; }                 -- highlights row when mouse is on it
+    tr:last-child { background: pink; }              -- colors only the last row
+
+
+LINK STYLING (Pseudo-classes)
+------------------------------
+
+Links have 4 states and you can style each one differently:
+
+    a:link    { color: red; }        -- normal unvisited link
+    a:visited { color: purple; }     -- link that you already clicked before
+    a:hover   { color: blue; }       -- when your mouse is over the link
+    a:active  { color: green; }      -- the moment you click the link
+
+Important: you should write them in this exact order (link, visited, hover, active)
+otherwise some of them might not work properly. Easy way to remember: LoVe HAte
+    L = link
+    V = visited
+    H = hover
+    A = active
+
+
+========================================
+QUICK RECAP
+========================================
+
+1. CSS makes websites look good
+2. Formula: selector { property: value; }
+3. Three types: inline, internal, external (external is best)
+4. Selectors help you pick WHAT to style
+5. Properties decide HOW to style it
+6. The box model = content + padding + border + margin
+7. Position helps you move stuff around
+8. Pseudo-classes like :hover let you add cool interactive effects
+
+Thats pretty much the basics of CSS. Once you understand these things
+you can start experimenting and making your own cool looking web pages.
+Just open the CSS.html file in this folder and see all of this stuff working live.
+
+Happy coding :)
