@@ -7,6 +7,7 @@
 [![MIT License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![HTML](https://img.shields.io/badge/HTML-E34F26?logo=html5&logoColor=white)](HTML_Practical.html)
 [![CSS](https://img.shields.io/badge/CSS-1572B6?logo=css3&logoColor=white)](CSS.html)
+[![W3.CSS](https://img.shields.io/badge/W3.CSS-04AA6D?logo=w3c&logoColor=white)](w3css.html)
 ![Status](https://img.shields.io/badge/Status-Active-brightgreen)
 
 ---
@@ -30,21 +31,28 @@ This repository is a **self-contained revision kit** for the **NIELIT O-Level (M
 ```
 Olevel-Pratical/
 │
-├── HTML_Practical.html   # Complete HTML tag reference with 32+ examples
-├── CSS.html              # CSS selectors, properties & styling demos
-├── continue_css.html     # Advanced CSS — positioning, text props, box model
-├── CSS_Notes.txt         # Theory notes on CSS selectors & syntax
-├── style.css             # External stylesheet demo
+├── 📄 HTML_Practical.html       # Complete HTML tag reference (32+ examples)
+├── 📄 CSS.html                  # CSS selectors, properties & styling demos
+├── 📄 continue_css.html         # Advanced CSS — positioning, box model, image gallery
+├── 📄 w3css.html                # W3.CSS framework basics
+├── 📄 CSS_Notes.txt             # Detailed CSS theory notes (kid-friendly!)
+├── 📄 style.css                 # External stylesheet demo
 │
-├── ironman.jpg           # Demo image asset
-├── Study.jpg             # Demo image asset
-├── Motivational.jpg      # Demo image asset
-├── Finished.jpg          # Demo image asset
-├── bye.png               # Demo image asset
-├── theunsuccessfulcoder.png  # Demo image asset
+├── 📁 Demo/                     # Hands-on demo projects
+│   ├── 📁 CSS/
+│   │   └── demo_css.html        # CSS Navigation bar (menu) demo
+│   └── 📁 HTML/
+│       └── (coming soon)
 │
-├── LICENSE               # MIT License
-└── README.md             # You are here
+├── 🖼️ Finished.jpg              # Demo image asset
+├── 🖼️ Motivational.jpg          # Demo image asset
+├── 🖼️ Study.jpg                 # Demo image asset
+├── 🖼️ bye.png                   # Demo image asset
+├── 🖼️ ironman.jpg               # Demo image asset
+├── 🖼️ theunsuccessfulcoder.png  # Demo image asset
+│
+├── 📄 LICENSE                   # MIT License
+└── 📄 README.md                 # You are here
 ```
 
 ---
@@ -78,6 +86,21 @@ Olevel-Pratical/
 | **Positioning** | `position: relative`, `top`, `left`, `right`, `bottom` |
 | **Lists** | `list-style-type`, `list-style-position` |
 | **Tables** | `border-collapse`, `border-spacing`, `table-layout`, `caption-side`, `nth-child` styling, hover effects |
+| **Image Gallery** | CSS Grid layout, `grid-template-columns`, `object-fit`, hover transitions, `box-shadow` |
+
+### 🟢 CSS Demos (`Demo/CSS/`)
+
+| File | What It Demonstrates |
+|------|----------------------|
+| `demo_css.html` | **Navigation Bar** — horizontal menu using `<ul>`, inline `<li>`, link styling, hover effects |
+
+### 🟣 W3.CSS (`w3css.html`)
+
+| Concept | Details |
+|---------|---------|
+| **Framework Basics** | Using W3.CSS via CDN link |
+| **Utility Classes** | `w3-red`, `w3-text-blue`, `w3-border`, `w3-brown` |
+| **Quick Styling** | Pre-built classes for colors, borders, and buttons without writing custom CSS |
 
 ---
 
@@ -97,9 +120,13 @@ Olevel-Pratical/
 2. **Open any HTML file in your browser**
    - `HTML_Practical.html` — for HTML tag revision
    - `CSS.html` — for CSS selector & property revision
-   - `continue_css.html` — for advanced CSS concepts
+   - `continue_css.html` — for advanced CSS + image gallery
+   - `w3css.html` — for W3.CSS framework basics
+   - `Demo/CSS/demo_css.html` — for navigation bar demo
 
 3. **Read the inline comments** (`<!-- ... -->` in HTML, `/* ... */` in CSS) — they explain every concept right next to the code.
+
+4. **Read `CSS_Notes.txt`** — full CSS theory written in simple, easy-to-understand language (even a 10-year-old can follow it!)
 
 ---
 
@@ -107,7 +134,23 @@ Olevel-Pratical/
 
 - 🔍 **Use "Inspect Element"** in your browser to live-edit CSS and see instant results.
 - 📝 **Read `CSS_Notes.txt`** first for the theory, then see it in action inside `CSS.html`.
+- 🎨 **Check the Demo folder** for real-world mini-projects like navigation bars.
 - 🔄 **Experiment!** Change values, break things, and fix them — that's the fastest way to learn.
+
+---
+
+## 🗺️ Learning Path
+
+Follow this order for the best learning experience:
+
+```
+1️⃣  HTML_Practical.html      →  Learn all HTML tags and attributes
+2️⃣  CSS_Notes.txt            →  Understand CSS theory (selectors, box model, etc.)
+3️⃣  CSS.html                 →  See CSS selectors & properties in action
+4️⃣  continue_css.html        →  Advanced CSS — positioning, text, image gallery
+5️⃣  Demo/CSS/demo_css.html   →  Build a real navigation bar
+6️⃣  w3css.html               →  Explore a CSS framework for rapid styling
+```
 
 ---
 
